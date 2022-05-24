@@ -5,10 +5,14 @@
 </head>
 <body>
     Hi {{ person }}! I think you're {{ compliment }}!
-      <form action="/game">
-        Would you like to play a game? <input type="radio" answer="yes">Yes<input type="radio" answer="no">No
-        <input type="submit" answer="submit">
-      </form>
+    <form action="/game">
+      <label for="option-select">Would you like to play a game?</label>
+      <select name="Select-option" id="select-option">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <input type="Submit">
+      </select>
+    </form>
 </body>
 </html>
 

@@ -54,9 +54,9 @@ def greet_person():
 @app.route("/game")
 def show_madlib_form():
 
-    answer = request.args.get("answer")
+    answer = request.args.get("Select-option")
 
-    if answer.value == "Yes":
+    if answer == "Yes":
         return render_template("game.html")
     else:
         return render_template("goodbye.html")
@@ -65,16 +65,15 @@ def show_madlib_form():
 @app.route("/madlib")
 def show_madlib():
 
-    name = request.args.get("person")
+    name = request.args.get("chosen_person")
 
-    color = request.args.get("chosen_color")
+    color = request.args.get("color")
 
-    noun = request.args.get("chosen_noun")
+    noun = request.args.get("noun")
 
-    adjective = request.args.get("chosen_adjective")
+    adjective = request.args.get("adjective")
 
-    return render_template("madlib.html")
-
+    return render_template("madlib.html", person=name, color=color, noun=noun, adjective=adjective)
 
 
 if __name__ == "__main__":
